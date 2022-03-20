@@ -1,4 +1,4 @@
-# NodeJS_Scaffold]
+# NodeJS_Scaffold
 
 This is a template for creating a NodeJS Express Server.
 
