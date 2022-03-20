@@ -1,0 +1,35 @@
+{
+  "name": "nodejs_template",
+  "version": "1.0.0",
+  "description": "Template for NodeJS Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "jest",
+    "lint": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/P33J3/NodeJS_Scaffold.git"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "Peter-Jon Lawrence and Audax Anchirinah (Supervisor)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/P33J3/NodeJS_Scaffold/issues"
+  },
+  "homepage": "https://github.com/P33J3/NodeJS_Scaffold#readme",
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-plugin-react": "^7.29.3",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "prettier": "2.5.1"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
