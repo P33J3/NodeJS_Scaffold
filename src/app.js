@@ -1,4 +1,4 @@
-const express = require("express");
+import express from 'express';
 
 const app = express();
 
@@ -9,8 +9,8 @@ const app = express();
 
 // Routes go here
 
-app.get("/", (req, res) => {
-  res.send(`<h1>Server is running!</h1>`);
+app.get('/', (req, res) => {
+  res.send('<h1>Server is running!</h1>');
 });
 
-export default app
+export default app;

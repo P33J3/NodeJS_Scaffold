@@ -1,9 +1,6 @@
-import app from './app'
+import app from './app';
 
-const port = process.env.PORT || 5000;
-
-//const server = http.createServer();
-
+const port = process.env.PORT || 3000;
 
 // Start server here
 app.listen(port, () => {
