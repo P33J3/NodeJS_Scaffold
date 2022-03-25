@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Template for NodeJS Server",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "start": "nodemon app.js",
+    "start:dev": "npx -p @babel/core -p @babel/node babel-node --presets @babel/preset-env ./src/index.js",
+    "build": "babel src -d dist",
+    "start": "npm run build && node ./dist/index.js",
     "test": "jest",
-    "lint": "eslint ./"
+    "lint": "eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,7 @@
   },
   "homepage": "https://github.com/P33J3/NodeJS_Scaffold#readme",
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
     "eslint": "^8.11.0",
@@ -34,6 +38,7 @@
     "prettier": "2.5.1"
   },
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.3"
   }
 }
