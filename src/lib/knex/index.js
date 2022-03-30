@@ -1,7 +1,7 @@
 const db = require('knex')({
-  client: 'pg',
-  connection: process.env.PG_CONNECTION_STRING,
-  searchPath: ['knex', 'public'],
-});
+    client: 'pg',
+    connection: process.env.PG_CONNECTION_STRING,
+    searchPath: ['knex', 'public'],
+})
 
-export default db;
+export default db

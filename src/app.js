@@ -1,6 +1,6 @@
-import express from 'express';
+import express from 'express'
 
-const app = express();
+const app = express()
 
 // Middlewares
 // Bodyparser
@@ -10,7 +10,7 @@ const app = express();
 // Routes go here
 
 app.get('/', (req, res) => {
-  res.send('<h1>Server is running!</h1>');
-});
+    res.send('<h1>Server is running!</h1>')
+})
 
-export default app;
+export default app

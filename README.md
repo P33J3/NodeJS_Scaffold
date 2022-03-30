@@ -3,6 +3,7 @@
 This is a template for creating a NodeJS Express Server.
 
 To run the server
+
 1. Download the root folder
 2. npm install to download the dependencies
 3. npm start to run the server

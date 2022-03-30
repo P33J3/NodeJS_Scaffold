@@ -1,5 +1,5 @@
-import db from './knex';
+import db from './knex'
 
 export default {
-  db,
-};
+    db,
+}

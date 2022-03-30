@@ -1,52 +1,57 @@
 {
-  "name": "nodejs_template",
-  "version": "1.0.0",
-  "description": "Template for NodeJS Server",
-  "main": "index.js",
-  "type": "commonjs",
-  "scripts": {
-    "start:dev": "npx -p @babel/core -p @babel/node babel-node --presets @babel/preset-env ./src/index.js",
-    "build": "babel src -d dist",
-    "start": "npm run build && node ./dist/index.js",
-    "test": "jest",
-    "lint": "eslint . --fix",
-    "create:migration": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js migrate:make ",
-    "create:seed": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js  seed:make ",
-    "migrate:run": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js migrate:latest",
-    "migrate:rollback": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js migrate:rollback",
-    "seed:run": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js  seed:run"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/P33J3/NodeJS_Scaffold.git"
-  },
-  "keywords": [
-    "node",
-    "express"
-  ],
-  "author": "Peter-Jon Lawrence and Audax Anchirinah (Supervisor)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/P33J3/NodeJS_Scaffold/issues"
-  },
-  "homepage": "https://github.com/P33J3/NodeJS_Scaffold#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.8",
-    "@babel/preset-env": "^7.16.11",
-    "eslint": "^8.11.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-react": "^7.29.3",
-    "jest": "^27.5.1",
-    "nodemon": "^2.0.15",
-    "prettier": "2.5.1"
-  },
-  "dependencies": {
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3",
-    "faker": "^5.1.0",
-    "knex": "^1.0.4",
-    "pg": "^8.7.3"
-  }
+    "name": "nodejs_template",
+    "version": "1.0.0",
+    "description": "Template for NodeJS Server",
+    "main": "index.js",
+    "type": "commonjs",
+    "scripts": {
+        "start:dev": "npx -p @babel/core -p @babel/node babel-node --presets @babel/preset-env ./src/index.js",
+        "build": "babel src -d dist",
+        "start": "npm run build && nodemon ./dist/index.js",
+        "test": "jest",
+        "lint": "eslint . --fix",
+        "create:migration": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js migrate:make ",
+        "create:seed": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js  seed:make ",
+        "migrate:run": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js migrate:latest",
+        "migrate:rollback": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js migrate:rollback",
+        "seed:run": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js  seed:run",
+        "format:check": "prettier --check .",
+        "format:write": "prettier --write .",
+        "lint:check": "eslint .",
+        "lint:fix": "eslint --fix ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/P33J3/NodeJS_Scaffold.git"
+    },
+    "keywords": [
+        "node",
+        "express"
+    ],
+    "author": "Peter-Jon Lawrence and Audax Anchirinah (Supervisor)",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/P33J3/NodeJS_Scaffold/issues"
+    },
+    "homepage": "https://github.com/P33J3/NodeJS_Scaffold#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.17.6",
+        "@babel/core": "^7.17.8",
+        "@babel/preset-env": "^7.16.11",
+        "eslint": "^8.12.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-react": "^7.29.3",
+        "jest": "^27.5.1",
+        "nodemon": "^2.0.15",
+        "prettier": "^2.5.1"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "faker": "^5.1.0",
+        "knex": "^1.0.4",
+        "pg": "^8.7.3"
+    }
 }
