@@ -1,11 +1,7 @@
 import db from '../../lib/knex';
 
 export default class User {
-  constructor(firstname, lastname, age, address) {
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.age = age;
-    this.address = address;
+  constructor() {
     this.db = db;
   }
 
@@ -18,8 +14,10 @@ export default class User {
     };
   }
 
-  async addNewUser() {
-    return this.db('users').insert(this.retrieveUser());
+  async addNewUser(firstname, lastname, age, address) {
+    return this.db('users').insert({
+      firstname, lastname, age, address,
+    });
   }
 
   async getUsers() {

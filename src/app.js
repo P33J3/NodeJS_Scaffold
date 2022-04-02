@@ -1,4 +1,5 @@
 import express from 'express';
+import route from './routes';
 
 const app = express();
 
@@ -8,6 +9,7 @@ const app = express();
 // Error Middleware
 
 // Routes go here
+app.use(route);
 
 app.get('/', (req, res) => {
   res.send('<h1>Server is running!</h1>');
