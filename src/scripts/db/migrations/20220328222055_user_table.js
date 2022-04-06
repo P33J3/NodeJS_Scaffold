@@ -8,7 +8,7 @@ exports.up = function (knex) {
     t.dateTime('createdAt').notNull();
 
     t.string('firstname').notNull();
-    t.string('firstname').notNull();
+    t.string('lastname').notNull();
     t.integer('age').nullable();
     t.text('address').nullable();
   });
