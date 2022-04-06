@@ -12,8 +12,10 @@
     "lint": "eslint . --fix",
     "create:migration": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js migrate:make ",
     "create:seed": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js  seed:make ",
-    "migrate:run": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js migrate:latest",
+    "migrate": "knex migrate:latest --knexfile db/knexfile.js",
+    "migrate:run": "./node_modules/.bin/knex --knexfile src/lib/knex/config.js knex migrate:latest",
     "migrate:rollback": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js migrate:rollback",
+    "seed": "knex seed:run --knexfile src/lib/knex/config.js",
     "seed:run": "./node_modules/.bin/knex --knexfile=./src/lib/knex/config.js  seed:run"
   },
   "repository": {
@@ -50,6 +52,7 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "faker": "^5.1.0",
+    "http-errors": "^2.0.0",
     "knex": "^1.0.4",
     "pg": "^8.7.3"
   }
