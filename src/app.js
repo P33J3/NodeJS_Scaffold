@@ -14,11 +14,11 @@ app.use(express.json());
 // Error Middleware
 
 // Routes go here
-app.use(route);
-
 app.get("/", (req, res) => {
   res.send("<h1>Server is running!</h1>");
 });
+
+app.use(route);
 
 app.use((req, res, next) => {
   next(createError(404));
