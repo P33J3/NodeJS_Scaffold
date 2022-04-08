@@ -47,9 +47,12 @@
     "supertest": "^6.2.2"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.20.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "faker": "^5.1.0",
+    "find-config": "^1.0.0",
     "http-errors": "^2.0.0",
     "knex": "^1.0.4",
     "pg": "^8.7.3"

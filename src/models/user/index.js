@@ -1,4 +1,5 @@
-import db from '../../lib/knex';
+import db from "../../lib/knex";
+import "babel-polyfill";
 
 export default class User {
   constructor() {
@@ -15,28 +16,27 @@ export default class User {
   }
 
   async addNewUser(firstname, lastname, age, address) {
-    return this.db('users').insert({
-      firstname, lastname, age, address,
+    return this.db("users").insert({
+      firstname,
+      lastname,
+      age,
+      address,
     });
   }
 
   async getUsers() {
-    return this.db.select().table('users');
+    return this.db.select().table("users");
   }
 
   async getUserById(id) {
-    return this.db('users').where('id', id);
+    return this.db("users").where("id", id);
   }
 
   async updateUserById(id, updateObject) {
-    return this.db('users')
-      .where('id', id)
-      .update(updateObject);
+    return this.db("users").where("id", id).update(updateObject);
   }
 
   async removeUserById(id) {
-    return this.db('users')
-      .where('id', id)
-      .del();
+    return this.db("users").where("id", id).del();
   }
 }
