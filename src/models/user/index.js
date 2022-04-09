@@ -1,11 +1,7 @@
 import db from '../../lib/knex';
 
 export default class User {
-  constructor() {
-    this.db = db;
-  }
-
-  retrieveUser() {
+  static retrieveUser() {
     return {
       firstname: this.firstname,
       lastname: this.lastname,
@@ -14,28 +10,28 @@ export default class User {
     };
   }
 
-  async addNewUser(firstname, lastname, age, address) {
-    return this.db('users').insert({
+  static async addNewUser(firstname, lastname, age, address) {
+    return db('users').insert({
       firstname, lastname, age, address,
     });
   }
 
-  async getUsers() {
-    return this.db.select().table('users');
+  static async getUsers() {
+    return db.select().table('users');
   }
 
-  async getUserById(id) {
-    return this.db('users').where('id', id);
+  static async getUserById(id) {
+    return db('users').where('id', id);
   }
 
-  async updateUserById(id, updateObject) {
-    return this.db('users')
+  static async updateUserById(id, updateObject) {
+    return db('users')
       .where('id', id)
       .update(updateObject);
   }
 
-  async removeUserById(id) {
-    return this.db('users')
+  static async removeUserById(id) {
+    return db('users')
       .where('id', id)
       .del();
   }

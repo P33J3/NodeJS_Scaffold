@@ -1,29 +1,30 @@
-import express from "express";
-import createError from "http-errors";
-import route from "./routes";
-import errorHandler from "./middlewares/errorHandler";
+import bodyParser from 'body-parser';
+import express from 'express';
+import cors from 'cors';
+import route from './routes';
+import errorHandler from './middlewares/errorHandler';
 
 const app = express();
 
 // Middlewares
 
 // Bodyparser
-app.use(express.json());
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
 
 // CORS
+app.use(cors());
 // Error Middleware
+app.use(errorHandler);
 
 // Routes go here
 app.use(route);
 
-app.get("/", (req, res) => {
-  res.send("<h1>Server is running!</h1>");
+app.get('/', (req, res) => {
+  res.send('<h1>Server is running!</h1>');
 });
-
-app.use((req, res, next) => {
-  next(createError(404));
-});
-
-app.use(errorHandler);
 
 export default app;
