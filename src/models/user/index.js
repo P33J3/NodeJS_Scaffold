@@ -25,7 +25,10 @@ export default class User {
   }
 
   async getUsers() {
-    return this.db.select().table("users");
+    return this.db
+      .select("*")
+      .from("users")
+      .then((rows) => rows);
   }
 
   async getUserById(id) {
