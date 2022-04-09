@@ -2,7 +2,13 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const mainConnection = 'postgres://mznxjyvg:GMBQ3jdoDUU6QPRtZK0Y5aa0DpopijWl@batyr.db.elephantsql.com/mznxjyvg';
+const mainConnection = {
+  host: process.env.PGHOST,
+  port: process.env.PGPORT,
+  database: process.env.PGDATABASE,
+  user: process.env.PGUSER,
+  password: process.env.PGPASSWORD,
+};
 
 const DBURL = process.env.NODE_ENV === 'test' ? process.env.TEST_DB_URL : process.env.DB_URL;
 
