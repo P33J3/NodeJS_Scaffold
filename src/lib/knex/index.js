@@ -1,7 +1,6 @@
-const db = require('knex')({
-  client: 'pg',
-  connection: process.env.PG_CONNECTION_STRING,
-  searchPath: ['knex', 'public'],
-});
+import knex from 'knex';
+import knexConfig from './config';
+
+const db = knex(knexConfig);
 
 export default db;

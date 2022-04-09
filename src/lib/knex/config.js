@@ -1,6 +1,8 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
 
-const connection = {
+dotenv.config();
+
+const mainConnection = {
   host: process.env.PGHOST,
   port: process.env.PGPORT,
   database: process.env.PGDATABASE,
@@ -8,9 +10,12 @@ const connection = {
   password: process.env.PGPASSWORD,
 };
 
+const DBURL = process.env.NODE_ENV === 'test' ? process.env.TEST_DB_URL : process.env.DB_URL;
+
 const knexConfig = {
   client: 'pg',
-  connection,
+  connection: DBURL || mainConnection,
+  searchPath: ['knex', 'public'],
   migrations: {
     directory: '../../scripts/db/migrations',
   },
