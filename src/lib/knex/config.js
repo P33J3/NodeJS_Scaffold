@@ -2,13 +2,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const mainConnection = {
-  host: process.env.PGHOST,
-  port: process.env.PGPORT,
-  database: process.env.PGDATABASE,
-  user: process.env.PGUSER,
-  password: process.env.PGPASSWORD,
-};
+const mainConnection = '';
 
 const DBURL = process.env.NODE_ENV === 'test' ? process.env.TEST_DB_URL : process.env.DB_URL;
 
