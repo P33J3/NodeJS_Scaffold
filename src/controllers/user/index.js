@@ -22,9 +22,7 @@ export default class UserController {
   }
 
   async addOneUser(req, res) {
-    const firstname = req.body.firstname;
-    const lastname = req.body.lastname;
-    const age = req.body.age;
+    const { firstname, lastname, age } = req.body
     const address = req.body.address;
     const user = await User.addNewUser(firstname, lastname, age, address);
 
