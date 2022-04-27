@@ -10,5 +10,5 @@ describe('Users route', () => {
         .end((err, res) => {
             expect(res.status).to.eq(200)
         })
-    })
+    }) 
 })
